@@ -2,12 +2,27 @@ import telebot
 from ai_surov import gpt_surov
 from doc_creator import doc_creator
 from io import BytesIO
+from dotenv import dotenv_values
+from users_functions import new_user
 
-bot = telebot.TeleBot("BOT_TOKEN")
+config = dotenv_values(".env")
+
+bot = telebot.TeleBot(config["TELEGRAM_API"])
+
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-	bot.reply_to(message, "Referat mavzusini kiriting")
+	user_id = message.from_user.id  # Get the user's ID
+	bot.reply_to(message, f"Your user ID is {user_id}")
+
+	# bot.replyto(message, "Referat mavzusini kiriting")
+
+@bot.message_handler(commands=['yarat'])
+def doc_yarat(message):
+	user_id = message.from_user.id
+	new_user(user_input=user_id)
+	bot.reply_to(message, "Sizga 5 ta limit ajratildi")
+
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
