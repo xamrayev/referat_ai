@@ -1,6 +1,6 @@
 1. Repozitoriyni klonlaysiz:
    ```
-    git clone https://github.com/xamrayev/atdt22_tank/
+    git clone https://github.com/xamrayev/referat_ai/
    ```
 
 3. Yuklab olingan repozitoriy papkasiga o'tasiz:
