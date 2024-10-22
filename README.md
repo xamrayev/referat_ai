@@ -5,7 +5,7 @@
 
 3. Yuklab olingan repozitoriy papkasiga o'tasiz:
    ```
-    cd ./atdt22_tank
+    cd ./referat_ai
    ```
 5. Pyhton uchun virtual muhit yaratasiz
    ```
